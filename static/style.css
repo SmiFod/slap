@@ -12,6 +12,7 @@ body {
     width: 100%; 
     padding: 10px; 
     margin: 5px 0; 
+    border-radius: 10px;
     cursor: pointer; 
     background: #f0f0f0; 
     border: none; 
@@ -33,4 +34,11 @@ body {
 #next, #restart { 
     display: none; 
     margin-top: 20px; 
+}
+
+#logout {
+    border-radius: 5px;
+    width: 20%;
+    height: auto;
+    font-size: 120%;
 }

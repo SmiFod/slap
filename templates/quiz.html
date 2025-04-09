@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Spill</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: auto; padding: 20px; }
+        .option { display: block; width: 100%; padding: 10px; margin: 5px 0; cursor: pointer; background: #f0f0f0; border: none; }
+        .option:hover { background: #ddd; }
+        .correct { background: green !important; color: white; }
+        .wrong { background: red !important; color: white; }
+        #next, #restart { display: none; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz Spill</h1>
+        <form action="/logout" method="get">
+            <button type="submit">Logg ut</button>
+        </form>
+        
+        <div id="quiz-container">
+            <p id="question">Laster spørsmål...</p>
+            <button class="option" onclick="checkAnswer(1)"></button>
+            <button class="option" onclick="checkAnswer(2)"></button>
+            <button class="option" onclick="checkAnswer(3)"></button>
+            <button class="option" onclick="checkAnswer(4)"></button>
+        </div>
+        <button id="next" onclick="nextQuestion()">Neste spørsmål</button>
+        <button id="restart" onclick="restartQuiz()">Spill på nytt</button>
+        <p id="score">Poeng: 0</p>
+    </div>
+
+    <script>
+        let questions = [];
+        let currentQuestionIndex = 0;
+        let correctAnswer = 0;
+        let score = 0;
+
+        // Når siden er lastet, hent spørsmålene
+        document.addEventListener('DOMContentLoaded', fetchQuestions);
+
+        async function fetchQuestions() {
+            try {
+                const response = await fetch('/get_questions');
+                questions = await response.json();
+                showQuestion();
+            } catch (error) {
+                console.error('Feil ved henting av spørsmål:', error);
+            }
+        }
+
+        function showQuestion() {
+            // Når alle spørsmålene er gjennomgått
+            if (currentQuestionIndex >= questions.length) {
+                document.getElementById('quiz-container').innerHTML = '<h2>Quiz ferdig!</h2>';
+                document.getElementById('next').style.display = 'none';
+                document.getElementById('restart').style.display = 'block'; // Vis "Spill på nytt"-knapp
+                return;
+            }
+
+            // Hente spørsmålet og alternativer
+            const q = questions[currentQuestionIndex];
+            document.getElementById('question').textContent = q.question;
+            const options = document.getElementsByClassName('option');
+            options[0].textContent = q.option1;
+            options[1].textContent = q.option2;
+            options[2].textContent = q.option3;
+            options[3].textContent = q.option4;
+            correctAnswer = q.correct_option;
+
+            // Reset buttons for neste spørsmål
+            for (let btn of options) {
+                btn.classList.remove('correct', 'wrong');
+                btn.disabled = false;
+            }
+
+            // Skjul "Neste spørsmål"-knapp inntil et svar er valgt
+            document.getElementById('next').style.display = 'none';
+        }
+
+        function checkAnswer(selected) {
+            const options = document.getElementsByClassName('option');
+            if (selected === correctAnswer) {
+                options[selected - 1].classList.add('correct');
+                score++;
+            } else {
+                options[selected - 1].classList.add('wrong');
+                options[correctAnswer - 1].classList.add('correct');
+            }
+            // Disable all buttons etter at svar er valgt
+            for (let btn of options) {
+                btn.disabled = true;
+            }
+            document.getElementById('score').textContent = `Poeng: ${score}`;
+            document.getElementById('next').style.display = 'block'; // Vis "Neste spørsmål"-knapp
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            showQuestion();
+        }
+
+            function restartQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        document.getElementById('score').textContent = 'Poeng: 0';
+        document.getElementById('restart').style.display = 'none';
+        document.getElementById('quiz-container').innerHTML = `
+            <p id="question">Laster spørsmål...</p>
+            <button class="option" onclick="checkAnswer(1)"></button>
+            <button class="option" onclick="checkAnswer(2)"></button>
+            <button class="option" onclick="checkAnswer(3)"></button>
+            <button class="option" onclick="checkAnswer(4)"></button>
+        `;
+        document.getElementById('next').style.display = 'none';
+        fetchQuestions();
+    }
+
+    </script>
+</body>
+</html>

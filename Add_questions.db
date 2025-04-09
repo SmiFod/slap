@@ -1,0 +1,9 @@
+INSERT INTO quiz_db (question, option1, option2, option3, option4, correct_option)
+VALUES (
+    'Hva er hovedstaden i Norge?',
+    'Stockholm',
+    'København',
+    'Oslo',
+    'Helsinki',
+    3
+);

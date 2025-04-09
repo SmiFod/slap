@@ -1,9 +1,36 @@
-.nav a {
-    color: black;
-    text-decoration: none;
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+}
+.container { 
+    max-width: 600px; 
+    margin: auto; 
+    padding: 20px; 
+}
+.option { 
+    display: block; 
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    cursor: pointer; 
+    background: #f0f0f0; 
+    border: none; 
 }
 
-body{
-
+.option:hover {
+    background: #ddd; 
 }
 
+.correct {
+    background: green !important; 
+    color: white; 
+}
+
+.wrong { 
+    background: red !important; 
+    color: white; 
+}
+#next, #restart { 
+    display: none; 
+    margin-top: 20px; 
+}

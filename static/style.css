@@ -38,12 +38,18 @@ h1 {
     color: #ffffff;
     margin: 10px 0;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+}
+
+#question {
+    font-size: 130%;
 }
 
 h2 {
     font-size: 1.7em;
     color: #ffffff;
-    margin: 5px 0;
+    font-weight: 100;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Tagline */

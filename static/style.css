@@ -11,7 +11,7 @@ body {
 /* Navigation Bar */
 .nav {
     background-color: #f060eb; /* Light Purple */
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
@@ -29,24 +29,23 @@ body {
 /* Container for Content */
 .container {
     text-align: center;
-    padding: 30px;
 }
 
 /* Headings */
 h1 {
     font-size: 3.5em;
     color: #ffffff;
-    margin: 10px 0;
+    font-weight: 300;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     letter-spacing: 3px;
 }
 
 #question {
-    font-size: 130%;
+    font-size: 200%;
 }
 
 h2 {
-    font-size: 1.7em;
+    font-size: 2.5em;
     color: #ffffff;
     font-weight: 100;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
@@ -56,7 +55,6 @@ h2 {
 #slap {
     font-size: 1.5em;
     color: #ffffff; 
-    margin-bottom: 30px;
     font-style: italic;
     letter-spacing: 1px;
 }

@@ -42,3 +42,21 @@ body {
     height: auto;
     font-size: 120%;
 }
+
+
+#logo {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+#slap {
+    font-weight: bold;
+    font-size: 120%;
+    margin-top: -2%;
+}

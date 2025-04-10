@@ -1,79 +1,146 @@
-body { 
-    font-family: Arial, sans-serif; 
-    text-align: center; 
+/* General Body Styling */
+body {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: rgb(198, 13, 177); /* Hot Pink */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
-.container { 
-    max-width: 600px; 
-    margin: auto; 
-    padding: 20px; 
+
+/* Navigation Bar */
+.nav {
+    background-color: #f060eb; /* Light Purple */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.option { 
-    display: block; 
-    width: 100%; 
-    padding: 10px; 
-    margin: 5px 0; 
-    border-radius: 10px;
-    cursor: pointer; 
-    background: #f0f0f0; 
-    border: none; 
+
+#logo {
+    width: 8%;
+    margin: 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+/* Container for Content */
+.container {
+    text-align: center;
+    padding: 30px;
+}
+
+/* Headings */
+h1 {
+    font-size: 3.5em;
+    color: #ffffff;
+    margin: 10px 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 1.7em;
+    color: #ffffff;
+    margin: 5px 0;
+}
+
+/* Tagline */
+#slap {
+    font-size: 1.5em;
+    color: #ffffff; 
+    margin-bottom: 30px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Buttons */
+button {
+    background-color: #1e90ff; /* Blue */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #4682b4; /* Darker Blue */
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Logout Button */
+#logout {
+    background-color: #ff6347; /* Red */
+}
+
+#logout:hover {
+    background-color: #cd5c5c; /* Darker Red */
+}
+
+/* Options in Quiz */
+.option {
+    background-color: #ff8c00; /* Orange */
+    color: white;
+    padding: 12px;
+    margin: 8px;
+    border-radius: 8px;
+    width: 80%;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .option:hover {
-    background: #ddd; 
+    background-color: #ff7f50; /* Lighter Orange */
+    transform: translateY(-3px);
+}
+
+.option:active {
+    transform: translateY(1px);
 }
 
 .correct {
-    background: green !important; 
-    color: white; 
+    background-color: #32cd32; /* Green */
 }
 
-.wrong { 
-    background: red !important; 
-    color: white; 
-}
-#next, #restart { 
-    display: none; 
-    margin-top: 20px; 
+.wrong {
+    background-color: #ff4500; /* Darker Red */
 }
 
-#logout {
-    border-radius: 5px;
-    width: 20%;
-    height: auto;
-    font-size: 120%;
+/* Next and Restart buttons */
+#next, #restart {
+    background-color: #ff8c00; /* Orange */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.3em;
+    margin: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-
-#logo {
-    width: 10%;
-    display: flex;
-    justify-content: center;
+#next:hover, #restart:hover {
+    background-color: #ff7f50; /* Lighter Orange */
+    transform: translateY(-3px);
 }
 
-.nav {
-    display: flex;
-    justify-content: center;
+#next:active, #restart:active {
+    transform: translateY(1px);
 }
 
-#slap {
-    font-weight: bold;
-    font-size: 120%;
-    margin-top: -2%;
+/* Score display */
+#score {
+    font-size: 1.4em;
+    margin-top: 30px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
-
-
-
-/* label {
-    background-color: grey;
-    border: white;
-    border-radius: 10px;
-    padding: 5px;
-    width: 10%;
-    display: flex;
-    justify-content: center;
-}
-
-input {
-    display: flex;
-    justify-content: center;
-} */

@@ -103,6 +103,8 @@ def get_questions():
 
 
 
+
+
 # Kjør appen
 if __name__ == '__main__':
     app.secret_key = "supersecretkey"

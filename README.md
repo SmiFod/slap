@@ -149,4 +149,30 @@ slap/
 
 ## 📬 Contact
 
-For questions or issues, feel free to open an issue or contact slap_service@gmail.com
+For questions or issues, feel free to open an issue or contact the project maintainer.
+
+
+---
+
+## ❓ FAQ
+
+### Q: What is Slap?
+**A:** Slap is a custom-built website made using Flask, designed to be lightweight and easily deployable on small-scale devices like a Raspberry Pi.
+
+### Q: What technologies does Slap use?
+**A:** Flask (Python), HTML, CSS, JavaScript, MariaDB (on a VM), and Nginx for hosting on a Raspberry Pi.
+
+### Q: How do I change the database credentials?
+**A:** Edit the database settings in `config.py` or wherever your connection setup is located.
+
+### Q: How do I run this on a different machine?
+**A:** Update the database host and domain configuration, then follow the setup guide to install dependencies and run the app.
+
+### Q: Can I use MySQL instead of MariaDB?
+**A:** Yes, MariaDB is a drop-in replacement for MySQL. Just ensure your SQL syntax and driver support match.
+
+### Q: How do I access the website from another device?
+**A:** Use the Raspberry Pi’s local IP or domain name (if you’ve set up DNS) to access the Flask app through Nginx.
+
+### Q: Is there HTTPS support?
+**A:** You can set up HTTPS with a free SSL certificate provider like Let’s Encrypt using `certbot` with Nginx.

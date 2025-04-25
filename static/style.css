@@ -83,7 +83,6 @@ button {
 }
 
 button:hover {
-    background-color: #4682b4; /* Darker Blue */
     transform: translateY(-3px);
 }
 
@@ -110,17 +109,11 @@ button:active {
     width: 80%;
     cursor: pointer;
     font-size: 1.2em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.option:hover {
-    background-color: #ff7f50; /* Lighter Orange */
-    transform: translateY(-3px);
-}
 
-.option:active {
-    transform: translateY(1px);
-}
+
+
 
 .correct {
     background-color: #32cd32; /* Green */

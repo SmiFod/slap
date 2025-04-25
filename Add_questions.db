@@ -5,5 +5,9 @@ VALUES (
     'København',
     'Oslo',
     'Helsinki',
-    3
+    3,
 );
+
+
+INSERT INTO quiz_db (question, option1, option2, option3, option4, correct_option) VALUES
+('Hvor mye veier Younis?', '50kg', '999tonn', '200kg', '4kg', 2);

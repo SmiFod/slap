@@ -14,7 +14,7 @@ Session(app)
 # Databasekonfigurasjon – Bruk IP-en til din VM
 db_config = {
     "host": "10.2.2.177",  # Bytt til riktig VM-IP
-    "user": "sami",
+    "user": "sami1",
     "password": "IMKuben1337!",
     "database": "slap_users"
 }

@@ -18,7 +18,7 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/slap.git
+git clone https://github.com/SmiFod/slap.git
 cd slap
 ```
 
